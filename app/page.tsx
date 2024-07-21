@@ -20,15 +20,17 @@ const Page = () => {
   return (
     <div className="px-[40px] mt-[-70px] z-1">
       <div className="flex items-center justify-center w-full h-screen ">
-        <div className="grid grid-col-1 md:flex items-center justify-center w-[100%] h-[80%]">
-          <Image
-            width={1000}
-            height={1000}
-            src={revolve}
-            alt=""
-            className="h-[95%] w-[45%] object-cover"
-          />
-          <div className="w-[45%] h-[90%] font-bold text-[80px] flex items-center justify-center leading-[80px]">
+        <div className="grid grid-col-2 md:flex items-center justify-center w-[100%] h-[80%]">
+          <div className="w-full z-1 md:mt-[0px] ">
+            <Image
+              width={1000}
+              height={1000}
+              src={revolve}
+              alt=""
+              className="h-full w-[620px] object-cover "
+            />
+          </div>
+          <div className="mr-20 md:w-[45%] h-[90%] font-bold text-[80px] flex items-center justify-center leading-[80px]">
             REVOLVER
             <br />
             $400
@@ -40,7 +42,7 @@ const Page = () => {
         Shop Now
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid pt-[100px] md:pt-[120px] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {things.payload?.map((el: any) => (
           <div
             key={el.id}
