@@ -5,7 +5,7 @@ import Image from "next/image";
 import React from "react";
 import {
   addProductToCart,
-  // deleteProduct,
+  deleteProduct,
   removeProductToCart,
 } from "../global/redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,7 +60,7 @@ const Page = () => {
                   >
                     Buy Now
                   </Button>
-                  {/* <Button
+                  <Button
                     variant={"destructive"}
                     className="text-[12px] mb-2"
                     onClick={() => {
@@ -68,7 +68,7 @@ const Page = () => {
                     }}
                   >
                     Delete
-                  </Button> */}
+                  </Button>
                 </div>
               </div>
               <div className="flex items-center gap-4">

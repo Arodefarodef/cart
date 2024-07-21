@@ -27,18 +27,18 @@ const redux = createSlice({
         state.cart.push({ ...payload, qty: 1 });
       }
     },
-    // addItems: (
-    //   state: {
-    //     product: never[];
-    //     cart: { qty: 0 }[];
-    //   },
-    //   { payload }
-    // ) => {
-    //   const check = state.cart.findIndex((el: any) => {
-    //     return el.id === payload;
-    //   });
-    //   state.cart[check].qty += 1;
-    // },
+    deleteProduct: (
+      state: {
+        product: never[];
+        cart: { qty: 0 }[];
+      },
+      { payload }
+    ) => {
+      const check = state.cart.findIndex((el: any) => {
+        return el.id === payload;
+      });
+      state.cart[check].qty -= 1;
+    },
 
     removeProductToCart: (state, { payload }) => {
       const newCart = state.cart.filter((el: any) => {
@@ -53,7 +53,7 @@ export const {
   addProduct,
   addProductToCart,
   removeProductToCart,
-  // deleteProduct,
+  deleteProduct,
 } = redux.actions;
 
 export default redux.reducer;
