@@ -13,6 +13,11 @@ const redux = createSlice({
       state.product = payload;
     },
 
+    deleteProduct: (state, { payload }) => {
+      let remove = state.cart.filter((el: any) => el.id !== payload.id);
+      state.cart = remove;
+    },
+
     addProductToCart: (
       state: {
         product: never[];
@@ -31,18 +36,18 @@ const redux = createSlice({
         state.cart.push({ ...payload, qty: 1 });
       }
     },
-    deleteProduct: (
-      state: {
-        product: never[];
-        cart: { qty: 0 }[];
-      },
-      { payload }
-    ) => {
-      const check = state.cart.findIndex((el: any) => {
-        return el.id === payload;
-      });
-      state.cart[check].qty -= 1;
-    },
+    // deleteProduct: (
+    //   state: {
+    //     product: never[];
+    //     cart: { qty: 0 }[];
+    //   },
+    //   { payload }
+    // ) => {
+    //   const check = state.cart.findIndex((el: any) => {
+    //     return el.id === payload;
+    //   });
+    //   state.cart[check].qty -= 1;
+    // },
 
     removeProductToCart: (state, { payload }) => {
       const newCart = state.cart.filter((el: any) => {
