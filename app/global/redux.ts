@@ -49,11 +49,18 @@ const redux = createSlice({
     //   state.cart[check].qty -= 1;
     // },
 
-    removeProductToCart: (state, { payload }) => {
-      const newCart = state.cart.filter((el: any) => {
-        return el.id !== payload.id;
-      });
-      state.cart = newCart;
+    removeProductToCart: (state: any, { payload }: any) => {
+      const check: any = state.cart.findIndex(
+        (el: any) => el.id === payload.id
+      );
+
+      if (state.cart[check].qty > 1) {
+        state.cart[check].qty -= 1;
+      } else {
+        let remove = state.cart.filter((el: any) => el.id !== payload.id);
+
+        state.cart = remove;
+      }
     },
   },
 });
