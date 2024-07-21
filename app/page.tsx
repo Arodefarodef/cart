@@ -20,7 +20,7 @@ const Page = () => {
   return (
     <div className="px-[40px] mt-[-70px] z-1">
       <div className="flex items-center justify-center w-full h-screen ">
-        <div className="grid grid-col-1 items-center justify-center md:flex items-center justify-center w-[100%] h-[80%]">
+        <div className="grid grid-col-1 md:flex items-center justify-center w-[100%] h-[80%]">
           <Image
             width={1000}
             height={1000}
